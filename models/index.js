@@ -26,6 +26,6 @@ Comment.belongsTo(User, {
 
 module.exports = {
     User,
-    Landmark,
+    Post,
     Comment
 }
