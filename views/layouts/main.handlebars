@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Tech Blog</title>
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body style="background-color: #aaf0d1">
+  <header style ="background-color: #1f1912" class="page-header flex items-center bg-green-900 text-6xl w-full py-8 text-left">
+    <a href="/" class="flex-grow flex items-center m-2">
+      <span class="heading text-white">Tech Blog</span>
+    </a>
+
+   
+
+    <div class="text-D5DBC9">
+        {{#if logged_in}}
+            <a href="/profile" class="mr-4">Home Dashboard</a>
+            <button class="no-button" id="logout">Logout</button>
+        {{else}}
+            <a href="/login">Login</a>
+        {{/if}}
+  </header>
+
+
+
+
+
+
+  <main class="">
+    
+    {{{ body }}}
+  </main>
+
+  <footer>
+
+  </footer>
+
+
+  {{#if logged_in}}
+    <script type="text/javascript" src="/js/logout.js"></script>
+  {{/if}}
+
+  <style>
+    
+    header {
+      font-family: 'Libre Baskerville', serif !important;
+    }
+  </style>
+  
+</body>
+
+   
+
+
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
