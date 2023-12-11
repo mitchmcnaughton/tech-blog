@@ -1,0 +1,29 @@
+{{#if postData2}}
+
+    <ul>
+        <div class="w-3/4 mx-auto">
+            <div class="space-y-4">
+                {{#each postData2}}
+                    <div class="border border-gray-300 p-4 mb-4">
+                        
+                        <div class="flex justify-between items-center mb-2">
+                        <div class="text-gray-600">
+                            {{title}}
+                        </div>
+                        <div class="text-gray-600">
+                            <span>{{user.username}}</span> | <span>{{date}}</span>
+                        </div>
+                        </div>
+
+                        
+                        <div>
+                        {{review}}
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </ul>
+
+{{/if}}
+    <script src="/js/script.js"></script>
