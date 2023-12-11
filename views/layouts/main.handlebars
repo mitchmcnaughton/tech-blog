@@ -7,24 +7,27 @@
   <title>Your Tech Blog</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body style="background-color: #aaf0d1">
-  <header style ="background-color: #1f1912" class="page-header flex items-center bg-green-900 text-6xl w-full py-8 text-left">
-    <a href="/" class="flex-grow flex items-center m-2">
-      <span class="heading text-white">Tech Blog</span>
-    </a>
+<body style="background-color: #abe3d6">
+  <header style="background-color: #1f1912; border: 2px solid #ccc; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);"
+    class="page-header flex items-center bg-green-900 text-6xl w-full py-8 text-left">
+    <h1 style="color: #1f1912;" class="heading text-white">Tech Blog</h1>
 
-   
-
-    <div class="text-D5DBC9">
-        {{#if logged_in}}
-            <a href="/profile" class="mr-4">Home Dashboard</a>
-            <button class="no-button" id="logout">Logout</button>
-        {{else}}
-            <a href="/login">Login</a>
-        {{/if}}
+    <div style="color: #1f1912" class="ml-auto">
+      {{#if logged_in}}
+      <a href="/profile" class="no-button mr-4 text-4xl text-white hover:no-underline">Home</a>
+      <a href="/profile" class="no-button mr-4 text-4xl text-white hover:no-underline">Dashboard</a>
+      <button class="no-button mr-4 text-4xl text-white hover:no-underline" id="logout">Logout</button>
+      {{else}}
+      <a href="/login" class="hover:no-underline">Login</a>
+      {{/if}}
+    </div>
   </header>
+
+
+
 
 
 

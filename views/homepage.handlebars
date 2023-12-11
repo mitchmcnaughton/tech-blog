@@ -1,29 +1,29 @@
 {{#if postData2}}
+    <div class="mt-8">
+        <ul>
+            <div class="w-3/4 mx-auto">
+                <div class="space-y-4">
+                    {{#each postData2}}
+                        <a href="/post/{{this.id}}" class="text-decoration-none">
+                            <div class="border border-2 mb-4" style="border-color: #1f1912;">
 
-    <ul>
-        <div class="w-3/4 mx-auto">
-            <div class="space-y-4">
-                {{#each postData2}}
-                    <div class="border border-gray-300 p-4 mb-4">
-                        
-                        <div class="flex justify-between items-center mb-2">
-                        <div class="text-gray-600">
-                            {{title}}
-                        </div>
-                        <div class="text-gray-600">
-                            <span>{{user.username}}</span> | <span>{{date}}</span>
-                        </div>
-                        </div>
+                                <div class="flex justify-between items-center p-2" style="background-color: #1f1912;">
+                                    <div class="text-gray-500 font-bold text-lg">
+                                        {{this.title}}
+                                    </div>
+                                    <div class="text-gray-500">
+                                        <span>{{this.user_username}}</span> | <span>{{this.date}}</span>
+                                    </div>
+                                </div>
 
-                        
-                        <div>
-                        {{review}}
-                        </div>
-                    </div>
-                {{/each}}
+                                <div class="text-black rounded p-4 bg-white">
+                                    {{this.blog}}
+                                </div>
+                            </div>
+                        </a>
+                    {{/each}}
+                </div>
             </div>
-        </div>
-    </ul>
-
+        </ul>
+    </div>
 {{/if}}
-    <script src="/js/script.js"></script>

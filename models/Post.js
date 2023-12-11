@@ -17,11 +17,12 @@ Post.init(
         allowNull: false,
       },
       user_username: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
         references: {
             model: User,
-            key: 'id',
+            key: 'username',
+            
         }
       },
       blog: {
@@ -38,7 +39,7 @@ Post.init(
       timestamps: false,
       freezeTableName: true,
       underscored: true,
-      modelName: 'landmark',
+      modelName: 'post',
     }
   );
   
