@@ -1,29 +1,29 @@
 {{#if postData2}}
-    <div class="mt-8">
-        <ul>
-            <div class="w-3/4 mx-auto">
-                <div class="space-y-4">
-                    {{#each postData2}}
-                        <a href="/post/{{this.id}}" class="text-decoration-none">
-                            <div class="border border-2 mb-4" style="border-color: #1f1912;">
+  <div class="mt-8">
+    <ul>
+      <div class="w-3/4 mx-auto">
+        <div class="space-y-4">
+          {{#each postData2}}
+            <a href="/post/{{this.id}}" class="text-decoration-none">
+              <div class="border border-2 mb-4" style="border-color: #1f1912;">
 
-                                <div class="flex justify-between items-center p-2" style="background-color: #1f1912;">
-                                    <div class="text-gray-500 font-bold text-lg">
-                                        {{this.title}}
-                                    </div>
-                                    <div class="text-gray-500">
-                                        <span>{{this.user_username}}</span> | <span>{{this.date}}</span>
-                                    </div>
-                                </div>
-
-                                <div class="text-black rounded p-4 bg-white">
-                                    {{this.blog}}
-                                </div>
-                            </div>
-                        </a>
-                    {{/each}}
+                <div class="flex justify-between items-center p-2" style="background-color: #1f1912;">
+                  <div class="text-gray-500 font-bold text-lg">
+                    {{this.title}}
+                  </div>
+                  <div class="text-gray-500">
+                    <span>{{this.user_username}}</span> | <span>{{this.date}}</span>
+                  </div>
                 </div>
-            </div>
-        </ul>
-    </div>
+
+                <div class="text-black rounded p-4 bg-white">
+                  {{this.blog}}
+                </div>
+              </div>
+            </a>
+          {{/each}}
+        </div>
+      </div>
+    </ul>
+  </div>
 {{/if}}

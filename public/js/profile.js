@@ -2,38 +2,61 @@ const newFormHandler = async (event) => {
     event.preventDefault();
   
     const title = document.querySelector('#post-title').value.trim();
-    const review = document.querySelector('#post-review').value.trim();
+    const blog = document.querySelector('#post-desc').value.trim();
    
   
-    if (title && review) {
-      const response = await fetch(`/api/projects`, {
+    if (title && blog) {
+      const response = await fetch(`/api/posts`, {
         method: 'POST',
-        body: JSON.stringify({ title, review}),
+        body: JSON.stringify({ title, blog}),
         headers: {
           'Content-Type': 'application/json',
         },
       });
   
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace('/dashboard');
       } else {
         alert('Failed to create project');
       }
     }
   };
   
-  const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
+ 
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleCreatePostButton = document.getElementById('toggle-create-post');
+    const createPostSection = document.getElementById('create-post-section');
+    const newPostForm = document.querySelector('.new-post-form');
   
-      const response = await fetch(`/api/projects/${id}`, {
-        method: 'DELETE',
-      });
+    // Toggle create post form
+    toggleCreatePostButton.addEventListener('click', function () {
+      // Toggle the display of the create post section
+      createPostSection.style.display = createPostSection.style.display === 'none' ? 'block' : 'none';
   
-      if (response.ok) {
-        document.location.replace('/profile');
-      } else {
-        alert('Failed to delete project');
+      // If the create post section is displayed, attach event listeners
+      if (createPostSection.style.display === 'block') {
+        attachEventListeners();
       }
+    });
+  
+    // Attach event listeners for the new post form
+    if (newPostForm) {
+      newPostForm.addEventListener('submit', newFormHandler);
     }
-  };
+  });
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    const clickablePosts = document.querySelectorAll('.clickable-post');
+  
+    clickablePosts.forEach((post) => {
+      post.addEventListener('click', function () {
+        const postId = post.getAttribute('data-id');
+        // Replace 'your_site_url' with the base URL of your dashboard
+        window.location.href = `/dashboard/${postId}`;
+      });
+    });
+
+  });
+
+  
