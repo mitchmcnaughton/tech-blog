@@ -25,19 +25,18 @@
     <h4>Your Posts:</h4>
 
     {{#if user}}
-      {{#each user.posts}}
-        <!-- Clickable post -->
+      {{#each postData2}}
         <div class="clickable-post border border-2 mb-4" style="border-color: #1f1912;" data-id="{{this.id}}">
           <div class="flex justify-between items-center p-2" style="background-color: #1f1912;">
             <div class="text-white font-bold text-lg">
-              {{title}}
+              {{this.title}}
             </div>
             <div class="text-gray-500">
-              {{user_username}} | {{date}}
+              {{this.user_username}} | {{date}}
             </div>
           </div>
           <div class="text-black rounded p-4 bg-white">
-            {{blog}}
+            {{this.blog}}
           </div>
         </div>
 

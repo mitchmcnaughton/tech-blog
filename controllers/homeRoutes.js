@@ -43,9 +43,17 @@ router.get('/', async (req, res) => {
       });
   
       const user = userData.get({ plain: true });
-      console.log(user)
+      const postData = await Post.findAll({
+        where: {
+          user_username: user.username
+        }
+
+      })
+      const postData2 = postData.map((post) => post.get({ plain: true }));
+      
       res.render('dashboard', {
         user,
+        postData2,
         logged_in: true
       });
     } catch (err) {
