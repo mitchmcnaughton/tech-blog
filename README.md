@@ -15,7 +15,7 @@
     N/a
         
 ## Usage
-    got to webiste 
+    got to webiste https://mitchmcnaughton-tech-blog-f837b6f5a756.herokuapp.com/dashboard
 ## Contributing
     just me
         
